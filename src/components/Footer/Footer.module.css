@@ -1,0 +1,23 @@
+.footerContainer {
+  height: 109px;
+  padding: 20px 30px;
+  background-color: #333333;
+}
+
+.socialWrpper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcon:not(:last-child) {
+  margin-right: 25px;
+}
+
+.copyright {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}

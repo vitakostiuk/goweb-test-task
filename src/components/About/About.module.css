@@ -1,0 +1,69 @@
+.imgWrapper {
+  height: 220px;
+  background-image: url('../../images/home/people.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .imgWrapper {
+    background-image: url('../../images/home/people@2x.jpg');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .imgWrapper {
+    width: 368px;
+    height: 589px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .imgWrapper {
+    width: 670px;
+    height: 460px;
+  }
+}
+
+.textBlock {
+  height: 562px;
+  padding-top: 79px;
+  padding: 79px 22px;
+  background-color: var(--accent-color);
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--white-color);
+}
+
+.title {
+  composes: subtitle;
+  margin-top: 16px;
+  font-size: 32px;
+}
+
+.text {
+  composes: subtitle;
+  margin-top: 24px;
+}
+
+.btn {
+  composes: subtitle;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 146px;
+  height: 54px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}

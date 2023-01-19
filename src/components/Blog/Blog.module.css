@@ -1,0 +1,38 @@
+.textBlock {
+  height: 466px;
+  padding: 48px 20px 58px 20px;
+  background-color: var(--second-color);
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  color: var(--white-color);
+}
+
+.title {
+  composes: subtitle;
+  margin-top: 16px;
+  font-size: 32px;
+}
+
+.text {
+  composes: subtitle;
+  margin-top: 24px;
+}
+
+.btn {
+  composes: subtitle;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 146px;
+  height: 54px;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}

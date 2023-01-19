@@ -1,0 +1,33 @@
+.logoWrapper {
+  display: flex;
+}
+
+.logoText {
+  margin-left: 8px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1ю4;
+  color: var(--accent-color);
+}
+
+.logoTextWhite {
+  composes: logoText;
+  color: var(--white-color);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 16px;
+}
+
+.item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.item:not(:last-child) {
+  margin-right: 12px;
+}
