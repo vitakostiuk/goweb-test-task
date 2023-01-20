@@ -1,3 +1,9 @@
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+}
+
 .imgWrapper {
   height: 220px;
   background-image: url('../../images/home/people.jpg');
@@ -35,6 +41,21 @@
   background-color: var(--accent-color);
 }
 
+@media screen and (min-width: 768px) {
+  .textBlock {
+    padding: 80px 20px;
+    width: 400px;
+    height: 589px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .textBlock {
+    padding: 62px 32px;
+    width: 690px;
+    height: 460px;
+  }
+}
+
 .subtitle {
   margin: 0;
   font-weight: 400;
@@ -43,20 +64,43 @@
   text-align: left;
   color: var(--white-color);
 }
+@media screen and (min-width: 768px) {
+  .subtitle {
+    font-style: 18px;
+  }
+}
 
 .title {
   composes: subtitle;
   margin-top: 16px;
   font-size: 32px;
 }
+@media screen and (min-width: 768px) {
+  .title {
+    width: 300px;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .title {
+    width: 562px;
+  }
+}
 
 .text {
   composes: subtitle;
   margin-top: 24px;
 }
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 18px;
+  }
+}
 
 .btn {
   composes: subtitle;
+  padding: 16px 32px;
   margin-top: 24px;
   display: flex;
   align-items: center;
@@ -66,4 +110,10 @@
   background-color: transparent;
   border: 1px solid #ffffff;
   border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 156px;
+    height: 57px;
+  }
 }

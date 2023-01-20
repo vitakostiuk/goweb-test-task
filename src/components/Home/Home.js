@@ -4,7 +4,7 @@ import s from './Home.module.css';
 
 const Home = () => {
   return (
-    <div className={s.textBlock}>
+    <section className={s.textBlock}>
       <h1 className={s.title}>The Sky Is The Limit</h1>
       <h2 className={s.subtitle}>
         We provide world class financial assistance
@@ -15,7 +15,7 @@ const Home = () => {
           <span className={s.textBtn}>Read More</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import contact from '../../images/home/contact.jpg';
-import contact_2x from '../../images/home/contact@2x.jpg';
+// import contact from '../../images/home/contact.jpg';
+// import contact_2x from '../../images/home/contact@2x.jpg';
 import s from './Form.module.css';
 
 const FormSchema = Yup.object().shape({
@@ -19,14 +19,15 @@ const FormComponent = () => {
     setCredentials(data);
   };
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       {' '}
-      <img
+      {/* <img
         srcSet={`${contact} 1x ${contact_2x} 2x`}
         src={contact}
         alt="Contact"
         className={s.img}
-      />
+      /> */}
+      <div className={s.imgWrapper}></div>
       <div className={s.textBlock}>
         <h3 className={s.title}>Request Callback</h3>
         <Formik
@@ -78,7 +79,7 @@ const FormComponent = () => {
           )}
         </Formik>
       </div>
-    </div>
+    </section>
   );
 };
 

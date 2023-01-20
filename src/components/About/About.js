@@ -3,7 +3,7 @@ import s from './About.module.css';
 
 const About = () => {
   return (
-    <>
+    <section className={s.container}>
       {' '}
       <div className={s.imgWrapper}></div>
       <div className={s.textBlock}>
@@ -19,7 +19,7 @@ const About = () => {
           Read More
         </button>
       </div>
-    </>
+    </section>
   );
 };
 

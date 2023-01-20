@@ -5,10 +5,13 @@ import s from './Hero.module.css';
 
 const Hero = () => {
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       <Header />
-      <Home />
-    </div>
+      <div className={s.homeWrapper}>
+        {' '}
+        <Home />
+      </div>
+    </section>
   );
 };
 

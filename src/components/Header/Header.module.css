@@ -1,13 +1,56 @@
+@keyframes scaleAnim {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 .logoWrapper {
   display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logoWrapper:hover {
+  animation-name: scaleAnim;
+  animation-duration: 1000ms;
+  filter: brightness(1.75);
 }
 
 .logoText {
   margin-left: 8px;
   font-weight: 400;
   font-size: 28px;
-  line-height: 1ю4;
+  line-height: 1.4;
   color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .logoText {
+    margin-left: 9.7px;
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .logoText {
+    margin-left: 4px;
+  }
 }
 
 .logoTextWhite {
@@ -22,12 +65,51 @@
   margin-top: 16px;
 }
 
+@media screen and (min-width: 768px) {
+  .list {
+    margin-top: 0;
+  }
+}
+
 .item {
+  position: relative;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
+  cursor: pointer;
+}
+
+.item::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item:hover::after {
+  transform: scaleX(1);
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    font-size: 18px;
+  }
 }
 
 .item:not(:last-child) {
   margin-right: 12px;
+}
+@media screen and (min-width: 768px) {
+  .item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .item:not(:last-child) {
+    margin-right: 46px;
+  }
 }

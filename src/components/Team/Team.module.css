@@ -2,6 +2,16 @@
   padding: 72px 20px 50px 20px;
   background-color: var(--white-color);
 }
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 50px 32px 40px 32px;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .container {
+    padding: 80px 28px;
+  }
+}
 
 .subtitle {
   margin: 0;
@@ -19,6 +29,11 @@
   margin-top: 16px;
   font-size: 32px;
 }
+@media screen and (min-width: 768px) {
+  .title {
+    width: 428px;
+  }
+}
 
 .text {
   composes: subtitle;
@@ -26,14 +41,31 @@
   margin-bottom: 33px;
 }
 
+@media screen and (min-width: 768px) {
+  .galleryBlock {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+    align-content: center;
+    margin-top: 24px;
+  }
+}
+
 .imgWrapper {
   margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .imgWrapper {
+    margin-top: 0;
+  }
 }
 
 .img {
   width: 280px;
   height: 186px;
-  margin-bottom: 16px;
 }
 
 .img:last-child {
@@ -58,9 +90,26 @@
   composes: subtitle;
   font-size: 20px;
   line-height: 1.35;
+  margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 32px;
+    line-height: 1;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .name {
+    margin-top: 15px;
+  }
 }
 
 .position {
   composes: subtitle;
   margin-top: 8px;
+}
+@media screen and (min-width: 768px) {
+  .position {
+    font-size: 18px;
+  }
 }

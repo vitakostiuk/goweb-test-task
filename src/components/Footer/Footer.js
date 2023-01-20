@@ -7,7 +7,7 @@ import s from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <div className={s.footerContainer}>
+    <footer className={s.footerContainer}>
       <div className={s.socialWrpper}>
         <Facebook className={s.socialIcon} />
         <Twitter className={s.socialIcon} />
@@ -15,7 +15,7 @@ const Footer = () => {
         <Linkedin className={s.socialIcon} />
       </div>
       <p className={s.copyright}>Copyright © 2021 - FinanceLedger</p>
-    </div>
+    </footer>
   );
 };
 
