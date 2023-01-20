@@ -10,8 +10,16 @@
   align-items: center;
 }
 
+.socialIcon {
+  cursor: pointer;
+}
+
 .socialIcon:not(:last-child) {
   margin-right: 25px;
+}
+
+.socialIcon:hover path {
+  fill: var(--accent-color);
 }
 
 .copyright {

@@ -11,6 +11,10 @@ import Person2 from 'images/team/person2.webp';
 import Person2_2x from 'images/team/person2@2x.webp';
 import Person3 from 'images/team/person3.webp';
 import Person3_2x from 'images/team/person3@2x.webp';
+import { ReactComponent as Facebook } from '../../images/facebook.svg';
+import { ReactComponent as Twitter } from '../../images/twitter.svg';
+import { ReactComponent as Youtube } from '../../images/youtube.svg';
+import { ReactComponent as Linkedin } from '../../images/linkedin.svg';
 import s from './Team.module.css';
 
 const Team = () => {
@@ -28,52 +32,83 @@ const Team = () => {
       <div className={s.galleryBlock}>
         <div className={s.imgWrapper}>
           {' '}
-          <picture className={s.img}>
-            <source
-              srcSet={`${Person1} 1x ${Person1_2x} 2x`}
-              type="image/webp"
-            />
-            <img
-              srcSet={`${Person1_JPG} 1x ${Person1_2x_JPG} 2x`}
-              src={Person1_JPG}
-              alt="Person1_JPG"
-              type="image/jpeg"
-            />
-          </picture>
+          <div className={s.thumb}>
+            {' '}
+            <picture className={s.img}>
+              <source
+                srcSet={`${Person1} 1x ${Person1_2x} 2x`}
+                type="image/webp"
+              />
+              <img
+                srcSet={`${Person1_JPG} 1x ${Person1_2x_JPG} 2x`}
+                src={Person1_JPG}
+                alt="Person1_JPG"
+                type="image/jpeg"
+              />
+            </picture>
+            <div className={s.after}>
+              <div className={s.socialWrpper}>
+                <Facebook className={s.socialIcon} />
+                <Twitter className={s.socialIcon} />
+                <Youtube className={s.socialIcon} />
+                <Linkedin className={s.socialIcon} />
+              </div>
+            </div>
+          </div>
           <p className={s.name}>John Doe</p>
           <p className={s.position}>President</p>
         </div>
         <div className={s.imgWrapper}>
           {' '}
-          <picture className={s.img}>
-            <source
-              srcSet={`${Person2} 1x ${Person2_2x} 2x`}
-              type="image/webp"
-            />
-            <img
-              srcSet={`${Person2_JPG} 1x ${Person2_2x_JPG} 2x`}
-              src={Person2_JPG}
-              alt="Person2_JPG"
-              type="image/jpeg"
-            />
-          </picture>
+          <div className={s.thumb}>
+            <picture className={s.img}>
+              <source
+                srcSet={`${Person2} 1x ${Person2_2x} 2x`}
+                type="image/webp"
+              />
+              <img
+                srcSet={`${Person2_JPG} 1x ${Person2_2x_JPG} 2x`}
+                src={Person2_JPG}
+                alt="Person2_JPG"
+                type="image/jpeg"
+              />
+            </picture>
+            <div className={s.after}>
+              <div className={s.socialWrpper}>
+                <Facebook className={s.socialIcon} />
+                <Twitter className={s.socialIcon} />
+                <Youtube className={s.socialIcon} />
+                <Linkedin className={s.socialIcon} />
+              </div>
+            </div>
+          </div>
           <p className={s.name}>Jane Doe</p>
           <p className={s.position}>Vice President</p>
         </div>
         <div className={s.imgWrapper}>
           {' '}
-          <picture className={s.img}>
-            <source
-              srcSet={`${Person3} 1x ${Person3_2x} 2x`}
-              type="image/webp"
-            />
-            <img
-              srcSet={`${Person3_JPG} 1x ${Person3_2x_JPG} 2x`}
-              src={Person3_JPG}
-              alt="Person3_JPG"
-              type="image/jpeg"
-            />
-          </picture>
+          <div className={s.thumb}>
+            <picture className={s.img}>
+              <source
+                srcSet={`${Person3} 1x ${Person3_2x} 2x`}
+                type="image/webp"
+              />
+              <img
+                srcSet={`${Person3_JPG} 1x ${Person3_2x_JPG} 2x`}
+                src={Person3_JPG}
+                alt="Person3_JPG"
+                type="image/jpeg"
+              />
+            </picture>
+            <div className={s.after}>
+              <div className={s.socialWrpper}>
+                <Facebook className={s.socialIcon} />
+                <Twitter className={s.socialIcon} />
+                <Youtube className={s.socialIcon} />
+                <Linkedin className={s.socialIcon} />
+              </div>
+            </div>
+          </div>
           <p className={s.name}>Steve Smith</p>
           <p className={s.position}>Marketing Head</p>
         </div>

@@ -67,3 +67,7 @@
   line-height: 1.4;
   color: var(--white-color);
 }
+
+.btn:hover {
+  background-color: #2ebf4f;
+}
