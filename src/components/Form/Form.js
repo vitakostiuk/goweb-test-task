@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-// import contact from '../../images/home/contact.jpg';
-// import contact_2x from '../../images/home/contact@2x.jpg';
+import { ReactComponent as Warning } from '../../images/form/worning.svg';
 import s from './Form.module.css';
 
 const FormSchema = Yup.object().shape({
@@ -18,31 +17,28 @@ const FormComponent = () => {
   const handleSetCredentials = data => {
     setCredentials(data);
   };
+
+  const handleSubmit = () => {};
   return (
-    <section className={s.container}>
+    <section name="Contact" className={s.container}>
       {' '}
-      {/* <img
-        srcSet={`${contact} 1x ${contact_2x} 2x`}
-        src={contact}
-        alt="Contact"
-        className={s.img}
-      /> */}
       <div className={s.imgWrapper}></div>
       <div className={s.textBlock}>
         <h3 className={s.title}>Request Callback</h3>
         <Formik
           initialValues={{
-            nam: '',
+            name: '',
             email: '',
           }}
           validationSchema={FormSchema}
-          onSubmit={values => {
+          onSubmit={(values, { resetForm }) => {
             // same shape as initial values
             console.log(values);
             handleSetCredentials(values);
+            resetForm({ values: '' });
           }}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, values }) => (
             <Form className={s.form}>
               <Field
                 id="name"
@@ -52,9 +48,15 @@ const FormComponent = () => {
                 name="name"
                 type="name"
                 placeholder="Enter your name"
+                value={values.name}
               />
               {errors.name && touched.name ? (
-                <div className={s.errName}>{errors.name}</div>
+                <div className={s.errName}>
+                  {errors.name}
+                  <span className={s.warning}>
+                    <Warning />
+                  </span>
+                </div>
               ) : null}
 
               <Field
@@ -65,9 +67,15 @@ const FormComponent = () => {
                 name="email"
                 type="email"
                 placeholder="Enter email*"
+                value={values.email}
               />
               {errors.email && touched.email ? (
-                <div className={s.errEmail}>{errors.email}</div>
+                <div className={s.errEmail}>
+                  {errors.email}
+                  <span className={s.warning}>
+                    <Warning />
+                  </span>
+                </div>
               ) : null}
 
               <div>

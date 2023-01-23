@@ -144,8 +144,10 @@
 
 .errName {
   position: absolute;
-  top: 70px;
+  top: -23px;
   right: 0px;
+  display: flex;
+  align-items: center;
   margin-top: 8px;
   color: #fc4274;
   font-size: 12px;
@@ -155,7 +157,11 @@
 
 .errEmail {
   composes: errName;
-  top: 172px;
+  top: 50px;
+}
+
+.warning {
+  margin-left: 8px;
 }
 
 .btn {

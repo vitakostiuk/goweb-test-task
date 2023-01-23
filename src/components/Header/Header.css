@@ -1,0 +1,36 @@
+.header-section {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 120px;
+  opacity: 1;
+  padding: 20px;
+  z-index: 999;
+}
+
+@media screen and (min-width: 768px) {
+  .header-section {
+    width: 769px;
+    height: 70px;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .header-section {
+    width: 1360px;
+    padding: 0px 32px;
+  }
+}
+
+.is-sticky {
+  composes: headerSection;
+  position: fixed;
+  background-color: #333333;
+  opacity: 0.8;
+}

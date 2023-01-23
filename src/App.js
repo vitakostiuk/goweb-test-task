@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'components/common/Container';
 import Hero from 'components/Hero';
 import About from 'components/About';

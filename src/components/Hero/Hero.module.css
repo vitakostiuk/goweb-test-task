@@ -2,6 +2,7 @@
   width: 320px;
   height: 533px;
   padding: 20px;
+  padding-top: 0;
   background-color: rgba(0, 0, 0, 0.04);
   background-image: linear-gradient(
       0deg,
@@ -32,7 +33,7 @@
   .container {
     width: 768px;
     height: 1024px;
-    padding: 32px 16px;
+    padding: 0px 16px 32px 16px;
   }
 }
 
@@ -41,14 +42,26 @@
     width: 1360px;
     height: 768px;
     padding: 32px;
+    padding-top: 0;
   }
+}
+
+.homeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 533px;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 768px) {
   .homeWrapper {
-    height: 98%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 1024px;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .homeWrapper {
+    height: 768px;
   }
 }

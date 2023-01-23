@@ -3,7 +3,7 @@ import s from './About.module.css';
 
 const About = () => {
   return (
-    <section className={s.container}>
+    <section name="About" className={s.container}>
       {' '}
       <div className={s.imgWrapper}></div>
       <div className={s.textBlock}>

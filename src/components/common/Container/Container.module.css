@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: block;
   margin: 0 auto;
   width: 320px;
@@ -17,4 +18,22 @@
   .container {
     width: 1360px;
   }
+}
+
+.toTop {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  padding: 8px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--white-color);
+  opacity: 0.5;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
 }

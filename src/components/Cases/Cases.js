@@ -100,7 +100,7 @@ const Cases = () => {
   };
 
   return (
-    <section className={s.container}>
+    <section name="Cases" className={s.container}>
       <div className={s.textBlock}>
         <h3 className={s.subtitle}>This is what we do</h3>
         <h3 className={s.title}>Business Cases</h3>
