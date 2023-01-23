@@ -143,11 +143,11 @@
 }
 
 .errName {
-  position: absolute;
-  top: -23px;
-  right: 0px;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 49px;
+  left: 4px;
   margin-top: 8px;
   color: #fc4274;
   font-size: 12px;
@@ -157,10 +157,12 @@
 
 .errEmail {
   composes: errName;
-  top: 50px;
+  top: 121px;
 }
 
 .warning {
+  display: flex;
+  align-items: center;
   margin-left: 8px;
 }
 
@@ -190,4 +192,33 @@
 
 .btn:hover {
   background-color: #2ebf4f;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3c4372e0;
+  z-index: 20;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 200px;
+
+  background-color: #1f2449;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #a1a5be;
 }

@@ -98,15 +98,28 @@
   }
 }
 
-.lightboxImg {
+@keyframes scaleAnim {
+  0% {
+    scale: 0.5;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+.lightboxImgAnim {
   width: 300px;
   object-fit: cover;
   border: 3px solid var(--white-color);
   border-radius: 5px;
+
+  animation-name: scaleAnim;
+  animation-duration: 1000ms;
 }
 
 @media screen and (min-width: 768px) {
-  .lightboxImg {
+  .lightboxImgAnim {
     width: 700px;
     height: auto;
     border: 5px solid var(--white-color);
@@ -114,10 +127,49 @@
 }
 
 @media screen and (min-width: 1360px) {
-  .lightboxImg {
+  .lightboxImgAnim {
     width: 1000px;
     height: auto;
   }
+}
+
+.lightboxImg {
+  composes: lightboxImgAnim;
+
+  animation-name: none;
+  animation-duration: none;
+}
+
+@keyframes opacityAnim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  cursor: pointer;
+  opacity: 1;
+
+  animation-name: opacityAnim;
+  animation-duration: 4000ms;
+}
+
+.close:hover {
+  opacity: 0.6;
 }
 
 .lightbox {
@@ -133,7 +185,7 @@
   justify-content: center;
 }
 
-.lightboxWrpper {
+.imgWrapper {
   position: relative;
 }
 
@@ -158,4 +210,28 @@
 .prev:hover,
 .next:hover {
   opacity: 1;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 201.7px;
+  background-color: rgba(255, 255, 255, 0.973);
+}
+
+@media screen and (min-width: 768px) {
+  .loader {
+    width: 700px;
+    height: 469.3px;
+    border: 5px solid var(--white-color);
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .loader {
+    width: 1000px;
+    height: 669px;
+  }
 }

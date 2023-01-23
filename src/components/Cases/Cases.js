@@ -3,6 +3,8 @@ import { images } from './images';
 import { photos } from './photos';
 import prev from '../../images/gallery/prev.png';
 import next from '../../images/gallery/next.png';
+import close from '../../images/gallery/close.png';
+import loading from '../../images/gallery/loading.gif';
 import s from './Cases.module.css';
 
 const Cases = () => {
@@ -10,6 +12,8 @@ const Cases = () => {
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [normalizedImages, setNormalizedImages] = useState(images);
   const [normalizedPhotos, setNormalizedPhotos] = useState(photos);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   // dynamic screen width
   const [screenSize, getDimension] = useState({
@@ -34,11 +38,15 @@ const Cases = () => {
 
   //function to show a specific image in the lightbox, amd make lightbox visible
   const showImage = image => {
+    setIsOpenModal(true);
     setImageToShow(image);
     setLightBoxDisplay(true);
   };
 
   useEffect(() => {
+    setIsLoading(false);
+    setIsOpenModal(false);
+
     if (screenSize.dynamicWidth < 768) {
       setNormalizedImages(images);
     } else {
@@ -73,6 +81,7 @@ const Cases = () => {
   //hide lightbox
   const hideLightBox = () => {
     setLightBoxDisplay(false);
+    setIsLoading(false);
   };
 
   //show next image in lightbox
@@ -83,7 +92,12 @@ const Cases = () => {
       setLightBoxDisplay(false);
     } else {
       let nextImage = normalizedPhotos[currentIndex + 1];
+      setIsLoading(true);
+      setIsOpenModal(false);
       setImageToShow(nextImage);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 400);
     }
   };
 
@@ -95,7 +109,12 @@ const Cases = () => {
       setLightBoxDisplay(false);
     } else {
       let nextImage = normalizedPhotos[currentIndex - 1];
+      setIsLoading(true);
+      setIsOpenModal(false);
       setImageToShow(nextImage);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 400);
     }
   };
 
@@ -113,9 +132,40 @@ const Cases = () => {
       {lightboxDisplay ? (
         <div className={s.lightbox} onClick={hideLightBox}>
           <div className={s.lightboxWrpper}>
-            <img className={s.prev} src={prev} alt="prev" onClick={showPrev} />
-            <img className={s.lightboxImg} src={imageToShow} alt="wer" />
-            <img className={s.next} src={next} alt="next" onClick={showNext} />
+            <div className={s.imgWrapper}>
+              {isLoading && (
+                <div className={s.loader}>
+                  {' '}
+                  <img className={s.loading} src={loading} alt="loading" />
+                </div>
+              )}{' '}
+              {!isLoading && (
+                <>
+                  {' '}
+                  <img
+                    className={s.prev}
+                    src={prev}
+                    alt="prev"
+                    onClick={showPrev}
+                  />
+                  <img
+                    className={isOpenModal ? s.lightboxImgAnim : s.lightboxImg}
+                    src={imageToShow}
+                    alt="wer"
+                  />
+                  <img
+                    className={s.next}
+                    src={next}
+                    alt="next"
+                    onClick={showNext}
+                  />
+                </>
+              )}
+            </div>
+            <div className={s.close}>
+              {' '}
+              <img src={close} alt="close" onClick={hideLightBox} />
+            </div>
           </div>
         </div>
       ) : (

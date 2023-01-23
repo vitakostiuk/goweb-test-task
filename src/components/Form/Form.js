@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { toast } from 'react-toastify';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { ReactComponent as Warning } from '../../images/form/worning.svg';
@@ -31,7 +32,7 @@ const FormComponent = () => {
           }}
           validationSchema={FormSchema}
           onSubmit={(values, submitProps) => {
-            console.log(values);
+            // console.log(values);
 
             fetch('/', {
               method: 'POST',
@@ -43,10 +44,13 @@ const FormComponent = () => {
                 if (!res.ok) {
                   throw new Error(res.status);
                 } else if (res.ok) {
-                  alert('Success!');
+                  toast.success('Your form submission has been reseived', {
+                    icon: '😎',
+                  });
                   submitProps.resetForm();
+                  // return navigate('/thank-you/');
                 } else {
-                  alert('Something wentwrong!');
+                  toast.warn('Something went wrong!', { icon: '🙁' });
                 }
 
                 return res;
