@@ -105,9 +105,8 @@ const Cases = () => {
         <h3 className={s.subtitle}>This is what we do</h3>
         <h3 className={s.title}>Business Cases</h3>
         <p className={s.text}>
-          Lorem ipsum dolor sit amet
-          <br /> consectetur adipisicing elit.
-          <br /> Architecto, sapiente!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
+          sapiente!
         </p>
       </div>
       <div className={s.galleryBlock}>{imageCards}</div>

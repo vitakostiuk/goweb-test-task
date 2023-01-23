@@ -12,13 +12,12 @@ const FormSchema = Yup.object().shape({
 });
 
 const FormComponent = () => {
-  const [credentials, setCredentials] = useState(null);
-
-  const handleSetCredentials = data => {
-    setCredentials(data);
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
   };
 
-  const handleSubmit = () => {};
   return (
     <section name="Contact" className={s.container}>
       {' '}
@@ -31,15 +30,35 @@ const FormComponent = () => {
             email: '',
           }}
           validationSchema={FormSchema}
-          onSubmit={(values, { resetForm }) => {
-            // same shape as initial values
+          onSubmit={(values, submitProps) => {
             console.log(values);
-            handleSetCredentials(values);
-            resetForm({ values: '' });
+
+            fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: encode({ 'form-name': 'contact', ...values }),
+            })
+              .then(res => {
+                console.log('res', res);
+                if (!res.ok) {
+                  throw new Error(res.status);
+                } else if (res.ok) {
+                  alert('Success!');
+                  submitProps.resetForm();
+                } else {
+                  alert('Something wentwrong!');
+                }
+
+                return res;
+              })
+              .catch(error => {
+                alert(error);
+              });
           }}
         >
           {({ errors, touched, values }) => (
             <Form className={s.form}>
+              <input type="hidden" name="form-name" value="contact" />
               <Field
                 id="name"
                 className={

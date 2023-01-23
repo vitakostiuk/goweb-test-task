@@ -47,26 +47,3 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-.toTop {
-  position: fixed;
-  bottom: 0;
-  right: 30%;
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 5px;
-  color: var(--white-color);
-  opacity: 0.5;
-}
-
-@media screen and (min-width: 768px) {
-  .toTop {
-    right: 25%;
-  }
-}
-
-@media screen and (min-width: 1360px) {
-  .toTop {
-    right: 25%;
-  }
-}
