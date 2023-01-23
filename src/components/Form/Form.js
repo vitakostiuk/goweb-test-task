@@ -40,7 +40,6 @@ const FormComponent = () => {
               body: encode({ 'form-name': 'contact', ...values }),
             })
               .then(res => {
-                console.log('res', res);
                 if (!res.ok) {
                   throw new Error(res.status);
                 } else if (res.ok) {
